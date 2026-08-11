@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FestReel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <div class="brand">🎲 FestReel</div>
+    <p class="subtitle">Scan. Discover. Enjoy.</p>
+
+    <section class="viewer">
+      <video id="reel" playsinline autoplay muted preload="auto" controls>
+        Your browser does not support video playback.
+      </video>
+
+      <div id="loading" class="loading">Finding your reel…</div>
+      <div id="error" class="error" hidden>
+        Add your MP4 files inside the <b>reels</b> folder and update the list in
+        <b>script.js</b>.
+      </div>
+    </section>
+
+    <p id="reelLabel" class="reel-label" aria-live="polite"></p>
+
+    <button id="another" type="button">🎲 Show Another Reel</button>
+    <p class="hint">Sound may start muted because of browser autoplay rules.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
