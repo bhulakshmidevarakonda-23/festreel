@@ -3,30 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FestReel</title>
+  <title>FestReel | College Fest</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main class="app">
-    <div class="brand">🎲 FestReel</div>
-    <p class="subtitle">Scan. Discover. Enjoy.</p>
+    <header>
+      <div class="badge">🎉 COLLEGE FEST</div>
+      <h1>🎲 FestReel</h1>
+      <p>Scan. Discover. Enjoy.</p>
+    </header>
 
-    <section class="viewer">
-      <video id="reel" playsinline autoplay muted preload="auto" controls>
-        Your browser does not support video playback.
-      </video>
-
-      <div id="loading" class="loading">Finding your reel…</div>
-      <div id="error" class="error" hidden>
-        Add your MP4 files inside the <b>reels</b> folder and update the list in
-        <b>script.js</b>.
-      </div>
+    <section class="card">
+      <div class="sparkle">✨</div>
+      <div class="small">YOUR RANDOM COLLEGE MOMENT</div>
+      <p id="quote" class="quote" aria-live="polite"></p>
+      <div id="category" class="category">💬 QUOTE</div>
     </section>
 
-    <p id="reelLabel" class="reel-label" aria-live="polite"></p>
-
-    <button id="another" type="button">🎲 Show Another Reel</button>
-    <p class="hint">Sound may start muted because of browser autoplay rules.</p>
+    <button id="another" type="button">🎲 Get Another</button>
+    <p class="hint">Every scan gives you a random moment.</p>
   </main>
 
   <script src="script.js"></script>

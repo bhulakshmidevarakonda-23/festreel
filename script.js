@@ -1,62 +1,31 @@
-// Replace these filenames with your actual MP4 files.
-const reels = [
-  "reels/reel1.mp4",
-  "reels/reel2.mp4",
-  "reels/reel3.mp4",
-  "reels/reel4.mp4"
+const content = [
+  { text: "Attendance is temporary, memories are permanent. 😂", type: "💬 QUOTE" },
+  { text: "You came for the degree, stayed for the memories. ❤️", type: "💬 QUOTE" },
+  { text: "College lo deadlines kanna friendships ekkuva important. 😎", type: "💬 QUOTE" },
+  { text: "One campus, thousands of stories. ✨", type: "💬 QUOTE" },
+  { text: "Fest starts with a plan and ends with a story. 🎉", type: "💬 QUOTE" },
+  { text: "Notes may be missing, but memories never are. 😂", type: "💬 QUOTE" },
+  { text: "Best college moments are usually unplanned. 🤍", type: "💬 QUOTE" },
+  { text: "Classroom memories fade, fest memories don't. 🔥", type: "💬 QUOTE" },
+  { text: "Scan chesav ante… nee luck ippudu start! 🎲", type: "💬 QUOTE" },
+  { text: "Enjoy the moment before the attendance reminder. 😅", type: "💬 QUOTE" }
 ];
 
-const video = document.getElementById("reel");
-const loading = document.getElementById("loading");
-const error = document.getElementById("error");
-const label = document.getElementById("reelLabel");
+const quote = document.getElementById("quote");
+const category = document.getElementById("category");
 const another = document.getElementById("another");
-
 let lastIndex = -1;
 
-function chooseRandomIndex() {
-  if (reels.length === 0) return -1;
-  if (reels.length === 1) return 0;
-
+function showRandom() {
   let index;
   do {
-    index = Math.floor(Math.random() * reels.length);
-  } while (index === lastIndex);
-
-  return index;
-}
-
-async function showRandomReel() {
-  loading.hidden = false;
-  error.hidden = true;
-
-  const index = chooseRandomIndex();
-  if (index < 0) {
-    error.hidden = false;
-    loading.hidden = true;
-    return;
-  }
+    index = Math.floor(Math.random() * content.length);
+  } while (content.length > 1 && index === lastIndex);
 
   lastIndex = index;
-  video.src = reels[index];
-  video.load();
-
-  try {
-    await video.play();
-  } catch (_) {
-    // Browser may block autoplay with sound.
-    // Video is muted, so most browsers will allow autoplay.
-  }
-
-  label.textContent = `Reel ${index + 1}`;
-  loading.hidden = true;
+  quote.textContent = content[index].text;
+  category.textContent = content[index].type;
 }
 
-video.addEventListener("error", () => {
-  loading.hidden = true;
-  error.hidden = false;
-});
-
-another.addEventListener("click", showRandomReel);
-
-showRandomReel();
+another.addEventListener("click", showRandom);
+showRandom();
