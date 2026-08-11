@@ -1,1 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FestReel Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+  <main class="app">
+
+    <section id="loginPanel" class="panel">
+      <h1>🔐 FestReel Admin</h1>
+      <p>Login to manage your FestReel content.</p>
+
+      <label>
+        Email
+        <input id="email" type="email" placeholder="Admin email">
+      </label>
+
+      <label>
+        Password
+        <input id="password" type="password" placeholder="Password">
+      </label>
+
+      <button id="loginBtn">Login</button>
+
+      <p id="loginStatus"></p>
+    </section>
+
+
+    <section id="adminPanel" class="panel" hidden>
+
+      <div class="topbar">
+        <div>
+          <h1>🎲 FestReel Admin</h1>
+          <p id="adminEmail"></p>
+        </div>
+
+        <button id="logoutBtn" class="secondary">Logout</button>
+      </div>
+
+
+      <label>
+        Content Type
+
+        <select id="contentType">
+          <option value="reel">🎬 Reel</option>
+          <option value="meme">😂 Meme</option>
+        </select>
+      </label>
+
+
+      <label>
+        Title (optional)
+
+        <input
+          id="title"
+          type="text"
+          placeholder="Campus Reel"
+        >
+      </label>
+
+
+      <label class="uploadBox">
+
+        📤 Select Reels / Memes
+
+        <input
+          id="files"
+          type="file"
+          accept="video/*,image/*"
+          multiple
+        >
+
+      </label>
+
+
+      <p id="fileCount">No files selected.</p>
+
+
+      <button id="uploadBtn">
+        🚀 Upload Selected Files
+      </button>
+
+
+      <div id="progress"></div>
+
+      <div id="results"></div>
+
+    </section>
+
+  </main>
+
+  <script type="module" src="admin.js"></script>
+
+</body>
+</html>
