@@ -1,8 +1,10 @@
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 body{margin:0;min-height:100vh;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#0f172a;color:#f8fafc;display:grid;place-items:center;padding:20px}
 .app{width:min(100%,440px);text-align:center}
-header{margin-bottom:18px}.badge{display:inline-block;padding:7px 12px;border:1px solid #475569;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.08em}
-h1{margin:10px 0 4px;font-size:36px}header p{margin:0;color:#cbd5e1}
+header{margin-bottom:18px}
+.badge{display:inline-block;padding:7px 12px;border:1px solid #475569;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.08em}
+h1{margin:10px 0 4px;font-size:36px} header p{margin:0;color:#cbd5e1}
 .viewer{position:relative;width:100%;aspect-ratio:9/16;border:1px solid #334155;border-radius:22px;overflow:hidden;background:#020617;display:grid;place-items:center}
 video{width:100%;height:100%;object-fit:cover}
 .quote-box{width:100%;height:100%;padding:28px;display:grid;place-items:center;align-content:center;gap:16px;background:#1e293b}

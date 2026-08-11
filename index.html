@@ -1,34 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FestReel</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FestReel</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <main class="app">
-  <header>
-    <div class="badge">🎉 COLLEGE FEST</div>
-    <h1>🎲 FestReel</h1>
-    <p>Scan. Discover. Enjoy.</p>
-  </header>
-
-  <section class="viewer">
-    <video id="reel" playsinline autoplay muted preload="auto" controls hidden></video>
-    <div id="quoteBox" class="quote-box" hidden>
-      <div class="emoji">✨</div>
-      <p id="quote"></p>
-    </div>
-    <div id="loading" class="loading">Finding your random moment…</div>
-    <div id="error" class="error" hidden>
-      Could not load this reel. Check that the video files are in the <b>reels</b> folder.
-    </div>
-  </section>
-
-  <div id="category" class="category" aria-live="polite"></div>
-  <button id="another" type="button">🎲 Get Another</button>
-  <p class="hint">Every scan gives you a random quote or reel.</p>
+<header>
+<div class="badge">🎉 COLLEGE FEST</div>
+<h1>🎲 FestReel</h1>
+<p>Scan. Discover. Enjoy.</p>
+</header>
+<section class="viewer">
+<video id="reel" playsinline autoplay muted preload="auto" controls hidden></video>
+<div id="quoteBox" class="quote-box" hidden>
+<div class="emoji">✨</div><p id="quote" class="quote"></p>
+</div>
+<div id="loading" class="loading">Finding your random moment…</div>
+<div id="error" class="error" hidden>Reel couldn't be loaded. Please check the video file.</div>
+</section>
+<div id="category" class="category" aria-live="polite"></div>
+<button id="another" type="button">🎲 Get Another</button>
+<p class="hint">Every scan gives you a random quote or reel.</p>
 </main>
 <script src="script.js"></script>
 </body>

@@ -11,11 +11,8 @@ const quotes = [
   "Enjoy the moment before the attendance reminder. 😅"
 ];
 
-const reels = [
-  "reels/reel1.mp4",
-  "reels/reel2.mp4",
-  "reels/reel3.mp4"
-];
+// The three videos are currently in the repository ROOT.
+const reels = ["reel1.mp4", "reel2.mp4", "reel3.mp4"];
 
 const video = document.getElementById("reel");
 const quoteBox = document.getElementById("quoteBox");
@@ -29,20 +26,18 @@ let lastKey = "";
 
 function randomItem() {
   const all = [
-    ...quotes.map((text, i) => ({ key: "q" + i, type: "💬 QUOTE", text })),
-    ...reels.map((src, i) => ({ key: "r" + i, type: "🎬 REEL", src }))
+    ...quotes.map((text, i) => ({key:"q"+i, type:"💬 QUOTE", text})),
+    ...reels.map((src, i) => ({key:"r"+i, type:"🎬 REEL", src}))
   ];
-
   let item;
   do {
     item = all[Math.floor(Math.random() * all.length)];
   } while (all.length > 1 && item.key === lastKey);
-
   lastKey = item.key;
   return item;
 }
 
-async function showRandom() {
+function showRandom() {
   loading.hidden = false;
   error.hidden = true;
   video.hidden = true;
@@ -60,16 +55,10 @@ async function showRandom() {
 
   video.src = item.src;
   video.currentTime = 0;
-  video.load();
-
-  try {
-    await video.play();
-  } catch (_) {
-    // Muted autoplay is generally allowed; user can press play if a browser blocks it.
-  }
-
   video.hidden = false;
   loading.hidden = true;
+
+  video.play().catch(() => {});
 }
 
 video.addEventListener("error", () => {

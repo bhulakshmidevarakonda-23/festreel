@@ -1,20 +1,15 @@
-FESTREEL — QUOTES + 3 REELS
+FESTREEL FIX
 
-The project now contains:
-- 10 college/fest quotes
-- reel1.mp4
-- reel2.mp4
-- reel3.mp4
+Your repository currently stores reel1.mp4, reel2.mp4 and reel3.mp4 in the ROOT,
+so script.js uses those root paths.
 
-Every page load/QR scan randomly chooses one item from all 13 items.
-The immediately previous item is avoided.
+This version also fixes the hidden-state CSS and does not wait for video.play()
+before showing the video.
 
-GITHUB UPDATE:
-Upload/replace index.html, style.css and script.js in the repository root.
-Create a folder named "reels" in the repository and upload:
-  reels/reel1.mp4
-  reels/reel2.mp4
-  reels/reel3.mp4
+Replace only:
+- index.html
+- style.css
+- script.js
 
-Then commit changes. GitHub Pages will update automatically.
-The existing QR URL does not need to change.
+Do NOT upload the videos again.
+Do NOT change the QR code.
